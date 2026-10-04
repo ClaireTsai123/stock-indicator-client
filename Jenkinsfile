@@ -35,7 +35,7 @@ pipeline {
         stage('Run Application') {
             steps {
                 sh '''
-                    java -jar target/stock-indicator-client-1.0.0.jar IBM
+                    java -jar target/stock-indicator-client-1.0-SNAPSHOT.jar IBM
                 '''
             }
         }
