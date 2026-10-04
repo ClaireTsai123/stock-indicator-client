@@ -186,3 +186,27 @@ CSV Output
 ## Security
 
 The Alpha Vantage API key is stored as an environment variable and is not committed to source control.
+
+## CI/CD
+
+This project uses Jenkins for continuous integration and automated build execution.
+
+The Jenkins pipeline performs the following steps:
+
+```text
+Checkout Source Code
+        ↓
+Verify Java and Maven
+        ↓
+Run Unit Tests
+        ↓
+Package Executable JAR
+        ↓
+Run the Application
+        ↓
+Archive JAR, JSON, and CSV Artifacts
+```
+
+The Alpha Vantage API key is stored securely in Jenkins Credentials and injected into the pipeline as an environment variable.
+
+A successful Jenkins build verifies that the application can compile, pass all tests, generate the executable JAR, fetch SMA data, and produce the JSON and CSV output files.
